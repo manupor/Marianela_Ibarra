@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-100 text-gray-800 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-terra-400 text-white font-semibold px-6 py-3 rounded-full 
+           hover:bg-terra-500 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-sage-400 text-white font-semibold px-6 py-3 rounded-full 
+           hover:bg-sage-500 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-terra-400 text-terra-500 font-semibold px-6 py-3 rounded-full 
+           hover:bg-terra-400 hover:text-white active:scale-95 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-cream-300 overflow-hidden;
+  }
+
+  .section-tag {
+    @apply inline-block text-xs font-semibold uppercase tracking-widest text-terra-400 mb-3;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl text-gray-800 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-gray-500 text-lg leading-relaxed;
+  }
+
+  .page-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-sage {
+    @apply bg-gradient-to-br from-sage-100 to-cream-200;
+  }
+
+  .gradient-terra {
+    @apply bg-gradient-to-br from-terra-100 to-cream-200;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #7A9E7E;
+  border-radius: 3px;
+}
+
+/* Mobile bottom nav safe area */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
