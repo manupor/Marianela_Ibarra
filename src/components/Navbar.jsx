@@ -30,7 +30,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          scrolled || open ? 'bg-white shadow-sm' : 'bg-transparent'
         }`}
       >
         <nav className="page-container flex items-center justify-between h-18 md:h-20">
@@ -88,7 +88,7 @@ export default function Navbar() {
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
             open ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-          } bg-white/98 backdrop-blur-md border-t border-cream-300`}
+          } bg-white border-t border-gray-100`}
         >
           <ul className="page-container py-4 flex flex-col gap-1">
             {links.map(({ to, label }) => (
@@ -100,7 +100,7 @@ export default function Navbar() {
                     `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       isActive
                         ? 'bg-sage-100 text-sage-700 font-semibold'
-                        : 'text-gray-600 hover:bg-cream-200'
+                        : 'text-gray-800 hover:bg-gray-50'
                     }`
                   }
                 >

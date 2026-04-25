@@ -101,7 +101,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <ul className="flex flex-wrap gap-3">
+            <ul className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-3">
               {values.map((v) => (
                 <li key={v} className="flex items-center gap-1.5 text-sm text-gray-500">
                   <CheckCircle2 size={15} className="text-sage-400 shrink-0" />
