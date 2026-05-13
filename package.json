@@ -1,0 +1,51 @@
+{
+  "name": "mibarranutricion-redesign",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "react-snap",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "lucide-react": "^0.378.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "react-snap": "^1.23.0",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.10"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist",
+    "include": [
+      "/",
+      "/sobre-mi",
+      "/servicios",
+      "/blog",
+      "/recursos",
+      "/contacto",
+      "/blog/poniendo-al-ejercicio-en-su-lugar",
+      "/blog/antes-de-llevar-a-tu-hij-al-nutricionista-lee-esto",
+      "/blog/la-trampa-de-comi-demasiado-manana-me-porto-bien",
+      "/blog/sentis-que-te-comes-todo-y-no-podes-parar-hablemos-de-eso",
+      "/blog/quiero-empezar-a-comer-mas-consciente-por-donde-empiezo",
+      "/blog/auxilio-como-emocionalmente"
+    ],
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "inlineCss": true,
+    "skipThirdPartyRequests": true,
+    "minifyHtml": {
+      "collapseWhitespace": true,
+      "removeComments": true
+    }
+  }
+}

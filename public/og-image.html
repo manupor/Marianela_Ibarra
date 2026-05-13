@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>OG image</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5efe6 0%, #e8dccb 50%, #d4c4ad 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 70px 80px;
+      color: #2d3a32;
+    }
+    /* decorative blobs */
+    .blob {
+      position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55;
+    }
+    .blob.sage  { width: 380px; height: 380px; background: #a8c4ae; top: -120px; right: -90px; }
+    .blob.terra { width: 320px; height: 320px; background: #d4a373; bottom: -110px; left: -100px; }
+
+    .content { position: relative; z-index: 2; max-width: 720px; }
+    .badge {
+      display: inline-block;
+      background: rgba(90, 127, 107, 0.15);
+      color: #5a7f6b;
+      font-size: 16px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 999px; margin-bottom: 28px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 68px; line-height: 1.1; font-weight: 700;
+      color: #2d3a32; margin-bottom: 24px;
+    }
+    h1 em { color: #5a7f6b; font-style: italic; }
+    p.tag {
+      font-size: 22px; color: #b86d3d; font-weight: 600; margin-bottom: 36px;
+    }
+    .features { display: flex; gap: 24px; flex-wrap: wrap; }
+    .feature {
+      font-size: 16px; color: #4a5a4f; display: flex; align-items: center; gap: 8px;
+      background: rgba(255, 255, 255, 0.6); padding: 8px 16px; border-radius: 999px;
+    }
+    .feature::before { content: '✓'; color: #5a7f6b; font-weight: 700; }
+    .right {
+      position: absolute; right: 80px; bottom: 70px; z-index: 2; text-align: right;
+    }
+    .right .name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #2d3a32; }
+    .right .role { font-size: 16px; color: #5a7f6b; margin-top: 4px; }
+    .right .url { font-size: 14px; color: #8a6d4a; margin-top: 16px; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+  <div class="blob sage"></div>
+  <div class="blob terra"></div>
+
+  <div class="content">
+    <span class="badge">Nutricionista · Costa Rica</span>
+    <h1>Transforma tu relación con la comida y tu <em>cuerpo</em></h1>
+    <p class="tag">Enfoque no centrado en peso · Alimentación intuitiva · TCA</p>
+    <div class="features">
+      <span class="feature">Sin dietas restrictivas</span>
+      <span class="feature">Bienestar integral</span>
+      <span class="feature">+15 años de experiencia</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <p class="name">Dra. Marianela Ibarra</p>
+    <p class="role">Nutricionista · Máster en TCA</p>
+    <p class="url">mibarranutricion.com</p>
+  </div>
+</body>
+</html>
