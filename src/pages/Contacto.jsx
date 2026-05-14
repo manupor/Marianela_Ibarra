@@ -53,9 +53,9 @@ const hours = [
 
 export default function Contacto() {
   useSEO({
-    title: 'Contacto · Agendá tu consulta nutricional por WhatsApp',
-    description: 'Agendá tu consulta con la Dra. Marianela Ibarra: WhatsApp +(506) 7011-7086 o correo mibarranutricion@gmail.com. Consulta presencial en Momentum Pinares, San José, Costa Rica y consulta online para toda Latinoamérica.',
-    keywords: 'agendar nutricionista WhatsApp, nutricionista San José, nutricionista Momentum Pinares, nutricionista Escazú Curridabat, consulta nutricional online Latinoamérica, contacto Marianela Ibarra',
+    title: 'Contacto · Nutricionista TCA Costa Rica | Agendá por WhatsApp',
+    description: 'Agendá tu consulta con la Dra. Marianela Ibarra, nutricionista TCA en Costa Rica: WhatsApp +(506) 7011-7086 o mibarranutricion@gmail.com. Consulta presencial en Momentum Pinares, San José y consulta online para toda Latinoamérica.',
+    keywords: 'nutricionista TCA Costa Rica contacto, agendar nutricionista WhatsApp, nutricionista San José, nutricionista trastornos alimenticios, nutricionista Momentum Pinares, nutricionista Escazú, consulta nutricional online Latinoamérica',
     path: '/contacto',
     jsonLdId: 'ld-contacto',
     jsonLd: {

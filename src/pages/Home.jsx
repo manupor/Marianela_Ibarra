@@ -113,22 +113,43 @@ const testimonials = [
 
 export default function Home() {
   useSEO({
-    title: 'Nutricionista no-dieta · Alimentación intuitiva · Online y Costa Rica',
-    description: 'Nutricionista especializada en alimentación intuitiva, enfoque no centrado en peso y TCA. Acompaño a personas cansadas de las dietas, la culpa y la obsesión a construir paz con la comida y su cuerpo. Consulta online (Latinoamérica) y presencial en San José.',
-    keywords: 'nutricionista alimentación intuitiva, nutricionista no dieta, enfoque no centrado en peso, nutricionista online, nutricionista Costa Rica, salud sin dietas, alimentación consciente, Marianela Ibarra nutricionista',
+    title: 'Nutricionista TCA Costa Rica | Marianela Ibarra | Trastornos Alimenticios',
+    description: 'Nutricionista especializada en TCA y trastornos alimenticios en Costa Rica. Marianela Ibarra · Máster en Trastornos de Conducta Alimentaria. Alimentación intuitiva y enfoque no centrado en peso. Consulta online (Latinoamérica) y presencial en San José.',
+    keywords: 'nutricionista TCA Costa Rica, nutricionista trastornos alimenticios, tratamiento TCA Costa Rica, nutricionista trastornos alimenticios Costa Rica, nutricionista alimentación intuitiva, enfoque no centrado en peso, nutricionista no dieta, Marianela Ibarra nutricionista',
     path: '/',
     jsonLdId: 'ld-home',
     jsonLd: {
       '@context': 'https://schema.org',
-      '@type': 'MedicalBusiness',
+      '@type': ['MedicalBusiness', 'LocalBusiness'],
       name: 'Marianela Ibarra Nutrición',
+      alternateName: 'Nutricionista TCA Costa Rica · Marianela Ibarra',
       url: 'https://www.mibarranutricion.com/',
       image: 'https://www.mibarranutricion.com/marianela.jpg',
       telephone: '+506-7011-7086',
       email: 'mibarranutricion@gmail.com',
-      medicalSpecialty: 'Nutrition',
-      areaServed: ['Costa Rica', 'Online'],
-      address: { '@type': 'PostalAddress', addressLocality: 'San José', addressCountry: 'CR' },
+      medicalSpecialty: ['Dietetics', 'EatingDisorders'],
+      knowsAbout: [
+        'Trastornos de Conducta Alimentaria (TCA)',
+        'Trastornos Alimenticios',
+        'Anorexia Nerviosa',
+        'Bulimia Nerviosa',
+        'Trastorno por Atracón',
+        'Alimentación Intuitiva',
+        'Imagen Corporal',
+        'Enfoque No Centrado en Peso',
+        'Mindful Eating',
+        'Alimentación Emocional',
+      ],
+      areaServed: ['Costa Rica', 'Latinoamérica', 'Online'],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Momentum Pinares',
+        addressLocality: 'San José',
+        addressRegion: 'San José',
+        postalCode: '10101',
+        addressCountry: 'CR',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 9.93333, longitude: -84.04167 },
       sameAs: ['https://www.instagram.com/mibarranutricion'],
     },
   })
@@ -149,7 +170,7 @@ export default function Home() {
         <div className="page-container relative z-10 py-10 md:py-14 grid md:grid-cols-2 gap-10 items-center">
           {/* Text */}
           <SlideInLeft className="order-2 md:order-1">
-            <span className="section-tag">Nutricionista · Costa Rica</span>
+            <span className="section-tag">Nutricionista TCA · Trastornos Alimenticios · Costa Rica</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-gray-800 leading-[1.15] mb-6">
               Transforma tu relación con la comida y tu{' '}
               <em className="text-sage-500 not-italic">cuerpo</em>
@@ -192,8 +213,12 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-sage-200 to-terra-100 rounded-[2.5rem] rotate-3 scale-105" />
               <img
                 src="/marianela.jpg"
-                alt="Dra. Marianela Ibarra, Nutricionista"
+                alt="Marianela Ibarra, nutricionista TCA en Costa Rica especializada en trastornos alimenticios"
                 className="relative w-72 h-80 md:w-80 md:h-96 object-cover rounded-[2rem] shadow-2xl"
+                loading="eager"
+                fetchpriority="high"
+                width="320"
+                height="384"
               />
               {/* Floating badge */}
               <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3">

@@ -56,9 +56,9 @@ const highlights = [
 
 export default function SobreMi() {
   useSEO({
-    title: 'Sobre mí · Marianela Ibarra Nutricionista',
-    description: 'Marianela Ibarra: nutricionista con +15 años de experiencia, Máster en TCA por la Universidad Europea de Madrid, docente de la Maestría en Nutrición de la UCR y fundadora de Todos a la Mesa. Trabajo desde un enfoque no centrado en peso.',
-    keywords: 'Marianela Ibarra, Marianela Ibarra nutricionista, Máster TCA Universidad Europea de Madrid, nutricionista Universidad de Costa Rica, docente nutrición UCR, Todos a la Mesa fundadora, nutricionista 15 años experiencia',
+    title: 'Marianela Ibarra | Nutricionista especializada en TCA Costa Rica',
+    description: 'Marianela Ibarra, nutricionista en Costa Rica especializada en TCA y trastornos alimenticios. +15 años de experiencia, Máster en Trastornos de Conducta Alimentaria (Universidad Europea de Madrid), docente UCR y fundadora de Todos a la Mesa.',
+    keywords: 'Marianela Ibarra nutricionista, nutricionista TCA Costa Rica, nutricionista trastornos alimenticios, especialista TCA, Máster Trastornos de Conducta Alimentaria, nutricionista UCR, Todos a la Mesa, nutricionista 15 años experiencia',
     path: '/sobre-mi',
     type: 'profile',
     jsonLdId: 'ld-sobre-mi',
@@ -68,9 +68,27 @@ export default function SobreMi() {
       mainEntity: {
         '@type': 'Person',
         name: 'Marianela Ibarra',
-        jobTitle: 'Nutricionista · Máster en TCA',
+        givenName: 'Marianela',
+        familyName: 'Ibarra',
+        jobTitle: 'Nutricionista especializada en TCA · Máster en Trastornos de Conducta Alimentaria',
+        description: 'Nutricionista en Costa Rica especializada en trastornos alimenticios (TCA), alimentación intuitiva y enfoque no centrado en peso.',
         url: 'https://www.mibarranutricion.com/sobre-mi',
         image: 'https://www.mibarranutricion.com/marianela.jpg',
+        knowsAbout: [
+          'Trastornos de Conducta Alimentaria (TCA)',
+          'Trastornos Alimenticios',
+          'Anorexia Nerviosa',
+          'Bulimia Nerviosa',
+          'Trastorno por Atracón',
+          'Alimentación Intuitiva',
+          'Imagen Corporal',
+          'Enfoque No Centrado en Peso',
+        ],
+        alumniOf: [
+          { '@type': 'CollegeOrUniversity', name: 'Universidad Europea de Madrid' },
+          { '@type': 'CollegeOrUniversity', name: 'Universidad de Costa Rica' },
+        ],
+        worksFor: { '@type': 'Organization', name: 'Todos a la Mesa' },
         sameAs: ['https://www.instagram.com/mibarranutricion'],
       },
     },
@@ -86,8 +104,12 @@ export default function SobreMi() {
               <div className="absolute inset-0 bg-gradient-to-br from-sage-200 to-cream-300 rounded-[2rem] rotate-2 scale-105" />
               <img
                 src="/marianela.jpg"
-                alt="Dra. Marianela Ibarra, Nutricionista"
+                alt="Marianela Ibarra, nutricionista con Máster en TCA, especializada en trastornos alimenticios en Costa Rica"
                 className="relative w-72 h-80 md:w-80 md:h-96 object-cover rounded-[1.75rem] shadow-2xl"
+                loading="eager"
+                fetchpriority="high"
+                width="320"
+                height="384"
               />
               <div className="absolute -bottom-5 right-0 bg-white rounded-2xl shadow-xl px-5 py-3">
                 <p className="text-xs text-gray-400">Fundadora de</p>
@@ -98,7 +120,7 @@ export default function SobreMi() {
 
           {/* Text */}
           <SlideInRight delay={100}>
-            <span className="section-tag">Sobre mí</span>
+            <span className="section-tag">Sobre mí · Nutricionista TCA Costa Rica</span>
             <h1 className="section-title mb-6">
               Hola, soy Marianela Ibarra
             </h1>

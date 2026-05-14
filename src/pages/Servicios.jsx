@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ChevronDown, ArrowRight, Heart, Users, Mic, CheckCircle2 } from 'lucide-react'
 import { FadeUp, StaggerGrid, ScaleIn } from '../components/Animated'
 import { useSEO } from '../hooks/useSEO'
@@ -168,18 +169,86 @@ function ServiceCard({ service }) {
 
 export default function Servicios() {
   useSEO({
-    title: 'Servicios · Consulta nutricional online, grupo de apoyo y charlas',
-    description: 'Consulta nutricional online y presencial con enfoque no centrado en peso. Grupo de apoyo virtual para mujeres y charlas/talleres para empresas y colegios. Trabajamos culpa al comer, atracones, hambre emocional, imagen corporal y TCA.',
-    keywords: 'consulta nutricional online, consulta nutricional Costa Rica, enfoque no centrado en peso, grupo de apoyo trastornos alimentarios, grupo apoyo mujeres alimentación, tratamiento atracones, tratamiento hambre emocional, charlas nutrición empresas, talleres alimentación consciente',
+    title: 'Tratamiento TCA y Trastornos Alimenticios | Costa Rica · Marianela Ibarra',
+    description: 'Tratamiento nutricional para TCA y trastornos alimenticios en Costa Rica. Consulta online y presencial, grupo de apoyo virtual para mujeres y charlas/talleres. Atracones, hambre emocional, imagen corporal y alimentación intuitiva.',
+    keywords: 'tratamiento TCA Costa Rica, nutricionista trastornos alimenticios Costa Rica, consulta nutricional online, consulta nutricional Costa Rica, grupo de apoyo trastornos alimentarios, tratamiento atracones, tratamiento hambre emocional, enfoque no centrado en peso, charlas nutrición empresas',
     path: '/servicios',
     jsonLdId: 'ld-servicios',
     jsonLd: {
       '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      itemListElement: [
-        { '@type': 'Service', position: 1, name: 'Consulta nutricional', serviceType: 'Nutrition counseling', provider: { '@type': 'Person', name: 'Marianela Ibarra' }, areaServed: ['Costa Rica', 'Latinoamérica', 'Online'] },
-        { '@type': 'Service', position: 2, name: 'Grupo de apoyo virtual para mujeres', serviceType: 'Support group', provider: { '@type': 'Person', name: 'Marianela Ibarra' } },
-        { '@type': 'Service', position: 3, name: 'Charlas y talleres', serviceType: 'Workshops', provider: { '@type': 'Person', name: 'Marianela Ibarra' } },
+      '@graph': [
+        {
+          '@type': 'ItemList',
+          itemListElement: [
+            {
+              '@type': 'Service',
+              position: 1,
+              name: 'Consulta nutricional para TCA y trastornos alimenticios',
+              serviceType: 'MedicalTherapy',
+              provider: { '@type': 'Person', name: 'Marianela Ibarra' },
+              areaServed: ['Costa Rica', 'Latinoamérica', 'Online'],
+              audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+            },
+            {
+              '@type': 'Service',
+              position: 2,
+              name: 'Grupo de apoyo virtual para mujeres',
+              serviceType: 'Support group',
+              provider: { '@type': 'Person', name: 'Marianela Ibarra' },
+            },
+            {
+              '@type': 'Service',
+              position: 3,
+              name: 'Charlas y talleres',
+              serviceType: 'Workshops',
+              provider: { '@type': 'Person', name: 'Marianela Ibarra' },
+            },
+          ],
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.mibarranutricion.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://www.mibarranutricion.com/servicios' },
+          ],
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: '¿Atienden trastornos alimenticios (TCA) en Costa Rica?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Sí. Marianela Ibarra es nutricionista especializada en TCA en Costa Rica, con Máster en Trastornos de Conducta Alimentaria. Tratamos anorexia, bulimia, trastorno por atracón y otros TCA, en consulta presencial en San José y online para toda Latinoamérica.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Cómo es la consulta nutricional?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Es un espacio personalizado, sin dietas rígidas y con enfoque no centrado en peso. Revisamos tus hábitos, tu historia con la comida y construimos juntos una rutina de bienestar real y sostenible.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿La consulta online es válida para personas fuera de Costa Rica?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Sí. Atiendo consulta online para toda Latinoamérica. Podés agendar tu cita por WhatsApp al +506 7011-7086 o al correo mibarranutricion@gmail.com.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Qué incluye el grupo de apoyo virtual?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Es un espacio para mujeres que desean mejorar su relación con la comida y el cuerpo en comunidad. Trabajamos culpa después de comer, cómo pensar menos en comida durante el día, imagen corporal, nutrición sin reglas y acompañamiento entre pares.',
+              },
+            },
+          ],
+        },
       ],
     },
   })
@@ -188,7 +257,7 @@ export default function Servicios() {
       {/* Hero */}
       <section className="page-container mb-10">
         <FadeUp className="max-w-2xl">
-          <span className="section-tag">Lo que ofrezco</span>
+          <span className="section-tag">Servicios · Tratamiento TCA · Costa Rica</span>
           <h1 className="section-title mb-4">
             Un acompañamiento nutricional muy diferente a lo tradicional
           </h1>

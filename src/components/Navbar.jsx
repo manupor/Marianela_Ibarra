@@ -3,12 +3,12 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { to: '/', label: 'Inicio' },
-  { to: '/sobre-mi', label: 'Sobre Mí' },
-  { to: '/servicios', label: 'Servicios' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/recursos', label: 'Recursos' },
-  { to: '/contacto', label: 'Contacto' },
+  { to: '/', label: 'Inicio', aria: 'Nutricionista TCA Costa Rica · Marianela Ibarra' },
+  { to: '/sobre-mi', label: 'Sobre Mí', aria: 'Sobre Marianela Ibarra, nutricionista especializada en TCA' },
+  { to: '/servicios', label: 'Servicios', aria: 'Servicios de nutrición y tratamiento de trastornos alimenticios' },
+  { to: '/blog', label: 'Blog', aria: 'Blog sobre alimentación intuitiva, TCA y trastornos alimenticios' },
+  { to: '/recursos', label: 'Recursos', aria: 'Recursos sobre nutrición y trastornos alimenticios' },
+  { to: '/contacto', label: 'Contacto', aria: 'Agendá tu consulta nutricional · Costa Rica' },
 ]
 
 export default function Navbar() {
@@ -45,11 +45,13 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-1">
-            {links.map(({ to, label }) => (
+            {links.map(({ to, label, aria }) => (
               <li key={to}>
                 <NavLink
                   to={to}
                   end={to === '/'}
+                  aria-label={aria}
+                  title={aria}
                   className={({ isActive }) =>
                     `px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                       isActive
@@ -70,6 +72,8 @@ export default function Navbar() {
               href="https://api.whatsapp.com/send/?phone=50670117086&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Agendar cita con nutricionista TCA en Costa Rica por WhatsApp"
+              title="Agendar cita por WhatsApp"
               className="hidden md:inline-flex btn-primary text-sm py-2 px-5"
             >
               Agendar cita
@@ -91,11 +95,13 @@ export default function Navbar() {
           } bg-white border-t border-gray-100`}
         >
           <ul className="page-container py-4 flex flex-col gap-1">
-            {links.map(({ to, label }) => (
+            {links.map(({ to, label, aria }) => (
               <li key={to}>
                 <NavLink
                   to={to}
                   end={to === '/'}
+                  aria-label={aria}
+                  title={aria}
                   className={({ isActive }) =>
                     `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       isActive

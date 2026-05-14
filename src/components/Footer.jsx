@@ -2,12 +2,13 @@ import { NavLink } from 'react-router-dom'
 import { Instagram, Mail, MapPin, Heart } from 'lucide-react'
 
 const links = [
-  { to: '/', label: 'Inicio' },
-  { to: '/sobre-mi', label: 'Sobre Mí' },
-  { to: '/servicios', label: 'Servicios' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/recursos', label: 'Recursos' },
-  { to: '/contacto', label: 'Contacto' },
+  { to: '/', label: 'Inicio', aria: 'Inicio · Nutricionista TCA Costa Rica' },
+  { to: '/sobre-mi', label: 'Sobre Mí', aria: 'Sobre Marianela Ibarra, nutricionista TCA en Costa Rica' },
+  { to: '/servicios', label: 'Servicios', aria: 'Servicios de nutrición y tratamiento de trastornos alimenticios' },
+  { to: '/tca-costa-rica', label: 'Tratamiento TCA', aria: 'Tratamiento de TCA y trastornos alimenticios en Costa Rica' },
+  { to: '/blog', label: 'Blog', aria: 'Blog sobre alimentación intuitiva y TCA' },
+  { to: '/recursos', label: 'Recursos', aria: 'Recursos sobre nutrición y trastornos alimenticios' },
+  { to: '/contacto', label: 'Contacto', aria: 'Contacto y agendar consulta nutricional' },
 ]
 
 export default function Footer() {
@@ -41,11 +42,13 @@ export default function Footer() {
         <div>
           <p className="text-xs uppercase tracking-widest text-sage-400 font-semibold mb-4">Páginas</p>
           <ul className="space-y-2">
-            {links.map(({ to, label }) => (
+            {links.map(({ to, label, aria }) => (
               <li key={to}>
                 <NavLink
                   to={to}
                   end={to === '/'}
+                  aria-label={aria}
+                  title={aria}
                   className="text-sm text-gray-400 hover:text-sage-300 transition-colors"
                 >
                   {label}

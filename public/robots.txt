@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /og-image.html
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 Sitemap: https://www.mibarranutricion.com/sitemap.xml
+Host: www.mibarranutricion.com
